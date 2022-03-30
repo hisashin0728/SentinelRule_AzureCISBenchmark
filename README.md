@@ -3,6 +3,9 @@ This package provides monitoring Azure Activity Log Alerts by Microsoft Sentinel
 Azure CIS Benchmark guides security recommendations to follow in order to set alerting and monitoring critical activities on an Azure Subscription, and guides alerts rules on Azure monitor. But Azure monitor cannot provide entities, so customer needs to investigate 5W1H (What/Who/When/Where/How).
 Microsoft Sentinel provides analytics and entities, and ingestion cost is free for Azure Activity.
 
+# Image
+![screenshot](./screenshot.png)
+
 # Analytics template
 Here are templates for Analytic rules on Microsoft Sentinel.
 
