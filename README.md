@@ -6,7 +6,7 @@ Microsoft Sentinel provides analytics and entities, and ingestion cost is free f
 # Analytics template
 Here are templates for Analytic rules on Microsoft Sentinel.
 
-| CIS Number | Rule Name | Description |
+| Azure CIS Section | Rule Name | Description |
 | --- | ----------- | ------- |
 | 5.2.1 | CIS_5.2.1_Ensure that Activity Log Alert exists for Create Policy Assignment |Create an activity log alert for the Create Policy Assignment event.|
 | 5.2.2 | CIS 5.2.2 Ensure that Activity Log Alert exists for Delete Policy Assignment |Create an activity log alert for the Delete Policy Assignment event.|
