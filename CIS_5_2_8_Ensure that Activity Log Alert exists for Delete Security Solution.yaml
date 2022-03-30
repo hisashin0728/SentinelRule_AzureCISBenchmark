@@ -1,10 +1,9 @@
 id: b3c75141-a08b-4c2f-bcb5-389f105fecb0
 name: CIS 5.2.8 Ensure that Activity Log Alert exists for Delete Security Solution
 description: |
-  'Create an activity log alert for the Delete Security Solution event.
-  Monitoring for Delete Security Solution events gives insight into changes to the active 
-security solutions and may reduce the time it takes to detect suspicious activity.
-  For more information - https://www.cisecurity.org/benchmark/azure'
+  Create an activity log alert for the Delete Security Solution event.
+  Monitoring for Delete Security Solution events gives insight into changes to the active security solutions and may reduce the time it takes to detect suspicious activity.
+  For more information - https://www.cisecurity.org/benchmark/azure
 severity: Low
 requiredDataConnectors:
   - connectorId: AzureActivity

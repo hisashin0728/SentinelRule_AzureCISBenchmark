@@ -1,10 +1,9 @@
 id: c9caa6f2-e9ef-4705-9f81-f06d880906ac
 name: CIS 5.2.2 Ensure that Activity Log Alert exists for Delete Policy Assignment
 description: |
-  'Create an activity log alert for the Delete Policy Assignment event.
-  Monitoring for delete policy assignment events gives insight into changes done in "azure 
-policy - assignments" and can reduce the time it takes to detect unsolicited changes.
-  For more information - https://www.cisecurity.org/benchmark/azure'
+  Create an activity log alert for the Delete Policy Assignment event.
+  Monitoring for delete policy assignment events gives insight into changes done in "azure policy - assignments" and can reduce the time it takes to detect unsolicited changes.
+  For more information - https://www.cisecurity.org/benchmark/azure
 severity: Low
 requiredDataConnectors:
   - connectorId: AzureActivity
