@@ -6,17 +6,19 @@ description: |
   For more information - https://www.cisecurity.org/benchmark/azure'
 severity: Low
 requiredDataConnectors:
-  - connectorId: AzureActivitygg
+  - connectorId: AzureActivity
     dataTypes:
       - AzureActivity
 queryFrequency: 5m
 queryPeriod: 5m
 triggerOperator: gt
 triggerThreshold: 0
+tags:
+  - AzureCISBenchmark
 query: |
 
   AzureActivity
-  | where TimeGenerated > ago(5m)
+  //| where TimeGenerated > ago(5m)
   | where CategoryValue =~ "Administrative"
   | where OperationNameValue =~ ""Microsoft.Sql/servers/firewallRules/write"
   | project TimeGenerated, Caller, CallerIpAddress, _ResourceId, ResourceGroup, SubscriptionId
