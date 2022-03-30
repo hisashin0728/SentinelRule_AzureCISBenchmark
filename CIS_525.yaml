@@ -1,0 +1,38 @@
+id: 77cee6b2-9142-42ce-86f0-137b8521f0ca
+name: CIS 5.2.5 Ensure that Activity Log Alert exists for Create or Update Network Security Group Rule
+description: |
+  Create an activity log alert for the Create or Update Network Security Group Rule event.
+  Monitoring for Create or Update Network Security Group Rule events gives insight into network access changes and may reduce the time it takes to detect suspicious activity.
+  For more information - https://www.cisecurity.org/benchmark/azure'
+severity: Low
+requiredDataConnectors:
+  - connectorId: AzureActivity
+    dataTypes:
+      - AzureActivity
+queryFrequency: 5m
+queryPeriod: 5m
+triggerOperator: gt
+triggerThreshold: 0
+query: |
+  AzureActivity
+  | where TimeGenerated > ago(5m)
+  | where CategoryValue =~ "Administrative"
+  | where OperationNameValue =~ "Microsoft.Network/networkSecurityGroups/securityRules/write"
+  | project TimeGenerated, Caller, CallerIpAddress, _ResourceId, ResourceGroup, SubscriptionId
+eventGroupingSettings:
+  aggregationKind: SingleAlert
+entityMappings:
+  - entityType: Account
+    fieldMappings:
+      - identifier: Name
+        columnName: Caller
+  - entityType: IP
+    fieldMappings:
+      - identifier: Address
+        columnName: CallerIpAddress
+  - entityType: Azure resource
+    fieldMappings:
+      - identifier: ResourceId
+        columnName: _ResourceId
+version: 1.0.0
+kind: Scheduled
