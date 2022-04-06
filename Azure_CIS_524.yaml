@@ -16,9 +16,7 @@ triggerThreshold: 0
 tags:
   - AzureCISBenchmark
 query: |
-
   AzureActivity
-  //| where TimeGenerated > ago(5m)
   | where CategoryValue =~ "Administrative"
   | where OperationNameValue =~ "Microsoft.Network/networkSecurityGroups/delete"
   | project TimeGenerated, Caller, CallerIpAddress, _ResourceId, ResourceGroup, SubscriptionId
